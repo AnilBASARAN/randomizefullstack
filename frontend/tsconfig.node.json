@@ -11,7 +11,13 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+
+    /* Enable composite project for this config */
+    "composite": true,
+
+    /* Enable emitting declaration files for node-related config */
+    "declaration": true,
+    "declarationDir": "./dist/types",
 
     /* Linting */
     "strict": true,
@@ -20,5 +26,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts"],
+
+  /* Ensure this config can be referenced by other tsconfigs */
+  "references": [
+    { "path": "./tsconfig.app.json" }
+  ]
 }
