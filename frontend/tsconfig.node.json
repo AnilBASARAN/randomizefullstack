@@ -1,35 +1,10 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-
-    /* Enable composite project for this config */
     "composite": true,
-
-    /* Enable emitting declaration files for node-related config */
     "declaration": true,
-    "declarationDir": "./dist/types",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "declarationDir": "./dist/types"
   },
-  "include": ["vite.config.ts"],
-
-  /* Ensure this config can be referenced by other tsconfigs */
-  "references": [
-    { "path": "./tsconfig.app.json" }
-  ]
+  "include": ["vite.config.ts"]
 }
