@@ -5,7 +5,7 @@
     "composite": true,
     "declaration": true,
     "declarationDir": "./dist/types",
-    "allowImportingTsExtensions": true  // Ensure this is added
+    "noEmit": true  // Ensure this is added
   },
   "include": ["src"]
 }

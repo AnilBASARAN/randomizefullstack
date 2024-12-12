@@ -5,7 +5,8 @@
     "strict": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
-    "allowImportingTsExtensions": true  // Enable importing .ts/.tsx extensions
+    "allowImportingTsExtensions": true,  // Keep this
+    "noEmit": true  // Add this to avoid emitting files
   },
   "include": ["src", "*.d.ts"]
 }
