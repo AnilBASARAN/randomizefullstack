@@ -4,7 +4,8 @@
     "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true  // Enable importing .ts/.tsx extensions
   },
   "include": ["src", "*.d.ts"]
 }
