@@ -1,4 +1,4 @@
-import React from 'react'
+
 import homepageimage from "../../assets/homepage.png"
 const Home = () => {
   return (
