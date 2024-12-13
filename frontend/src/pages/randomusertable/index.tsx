@@ -1,10 +1,10 @@
 import { Button, Table, Popconfirm } from 'antd';
 import axios from 'axios';
-import { Pencil, Trash } from 'lucide-react';
+import { Eye, Pencil, Trash } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import PageLoading from '../../components/pageLoading/PageLoading';
-
+import {ViewAppointmentModal} from './_components/view-appointment-modal.tsx';
 interface User {
     name: {
         first: string;
@@ -28,6 +28,8 @@ interface User {
 export const RandomUsersTable = () => {
     const [users, setUsers] = useState<User[] | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [showViewAppointmentModal,setShowViewAppointmentModal] = useState(false);
+    const [selectedAppointment, setSelectedAppointment] = useState<User | null>(null);
 
     const fetchUsers = async () => {
         setIsLoading(true);
@@ -82,6 +84,15 @@ export const RandomUsersTable = () => {
             key: "actions",
             render: (_: unknown, row: User) => (
                 <div className="flex gap-5">
+                    <Button
+                    onClick={()=>{
+                        setSelectedAppointment(row);
+                        setShowViewAppointmentModal(true);
+                    }}
+                    icon ={<Eye size={12} />}
+                    size='small' >
+                        View
+                    </Button>
                     <Popconfirm
                         title="Are you sure you want to delete this person?"
                         okText="Yes"
@@ -114,6 +125,15 @@ export const RandomUsersTable = () => {
                 pagination={false}
                 loading={isLoading}
             />
+            {selectedAppointment && (
+                <ViewAppointmentModal
+                    showViewAppointmentModal={showViewAppointmentModal}
+                    setShowViewAppointmentModal={setShowViewAppointmentModal}
+                    user={selectedAppointment}
+                />
+
+               
+            )}
         </div>
     );
 };
