@@ -124,7 +124,7 @@ export const RandomUsersTable = () => {
         <div className='flex justify-end items-end w-full'>
 
         <Button type="primary">
-          <Link href="/admin/doctors/new">Add Random User</Link>
+          <Link to="/newrandomuser">Add Random User</Link>
         </Button>
         </div>
       </div>

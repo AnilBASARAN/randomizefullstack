@@ -1,4 +1,3 @@
-"use client";
 
 
 import { Button, Input, Select } from "antd";
@@ -21,7 +20,7 @@ function FilterDoctors() {
     setName("");
     setEmail("");
     setPhone("");
-    navigate("/admin/doctors");
+    navigate("/randomusertable");
   };
 
   return (

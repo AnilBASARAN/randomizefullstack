@@ -1,5 +1,4 @@
 
-import { useNavigate } from 'react-router-dom';
 import { Button, Form,Input, message, Upload } from 'antd'
 
 import  { useState } from 'react'
@@ -23,15 +22,15 @@ interface User {
       thumbnail: string;
   };
 }
+
 interface RandomUserFormProps{
   type?: "add" | "edit";
   initialValues?: Partial<User>;
 }
 
-function DoctorForm({type = "add",initialValues={}}:RandomUserFormProps) {
-  const navigate = useNavigate();
+export const RandomUserFormPage =({type = "add",initialValues={}}:RandomUserFormProps)=> {
   const [loading,setLoading] = useState(false);
-
+ 
   const [profilePicture,setProfilePicture] = useState<any>(initialValues.profilePicture || null);
 
   const onSubmit = async (values: any) =>{
@@ -44,14 +43,14 @@ function DoctorForm({type = "add",initialValues={}}:RandomUserFormProps) {
       }
       let response : any = null;
       if(type == "add"){
-        response = await addRandomUser(values);
+        response = await addDoctor(values);
       }else{
-        response = await updateRandomUser({id:initialValues?._id!,data: values});
+        response = await updateDoctor({id:initialValues?._id!,data: values});
       }
 
       if(response.success){
         message.success(response.message);
-        navigate("/randomusertable");
+        router.push("/randomusertable");
       }else{
         message.error(response.message)
       }
@@ -90,7 +89,7 @@ function DoctorForm({type = "add",initialValues={}}:RandomUserFormProps) {
   }
 
   return (
-    <div className='mt-5 ' >
+    <div className='flex  w-full items-center justify-center h-screen mt-5 ' >
       <Form
       onFinish={onSubmit}
       className='grid grid-cols-4 gap-5'
@@ -103,8 +102,6 @@ function DoctorForm({type = "add",initialValues={}}:RandomUserFormProps) {
           rules={[{required: true, message: "Please input the name!"}]}
           >
             <Input />
-
-
           </Form.Item>
 
           <Form.Item
@@ -123,24 +120,8 @@ function DoctorForm({type = "add",initialValues={}}:RandomUserFormProps) {
             <Input type='number' />
           </Form.Item>
 
-
-
  
-
-
          
-
-         
-
-         
-
-          <Form.Item
-          className='col-span-4'
-          name="bio"
-          label="Bio"
-          rules={[{required: true, message: "Please input the Work Hours!"}]}>
-            <Input.TextArea/>
-          </Form.Item>
 
           <Form.Item
               label=" Profile Picture"
@@ -157,7 +138,7 @@ function DoctorForm({type = "add",initialValues={}}:RandomUserFormProps) {
 
           <div className='col-span-4 flex justify-end gap-5' >
             <Button
-            
+            onClick={()=> router.push("/admin/doctors")}
              disabled={loading} >Cancel</Button>
             <Button type='primary' htmlType='submit' loading={loading} >
              Save
@@ -168,5 +149,3 @@ function DoctorForm({type = "add",initialValues={}}:RandomUserFormProps) {
     </div>
   )
 }
-
-export default DoctorForm
