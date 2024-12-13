@@ -4,6 +4,7 @@ import { Eye, EyeOff, Loader2, Lock, Mail, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 import { toast } from "react-toastify";
+import gentlemen from "../assets/gentlemen.png"
 
 
 // Define types for form data
@@ -64,7 +65,7 @@ const SignUpPage = () => {
       {/* left side */}
       <img
         className="h-screen object-cover"
-        src="https://img.freepik.com/free-photo/business-owner-holding-we-are-open-sign_53876-127038.jpg"
+        src={gentlemen}
         alt="Sign Up"
       />
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
@@ -161,7 +162,7 @@ const SignUpPage = () => {
           <div className="text-center">
             <p className="text-base-content/60">
               Already have an account?{" "}
-              <Link to="/login" className="link link-primary">
+              <Link to="/api/login" className="link link-primary">
                 Sign in
               </Link>
             </p>

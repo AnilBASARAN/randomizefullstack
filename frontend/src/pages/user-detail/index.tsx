@@ -8,3 +8,6 @@ const UserDetail = () => {
 
 
 export default UserDetail
+
+/* import photo from "../assets/picrute1.png"
+import homepageimage from "../assets/homepage.png" */

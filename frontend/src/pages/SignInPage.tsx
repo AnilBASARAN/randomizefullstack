@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Eye, EyeOff, Loader2, Lock, Mail } from "lucide-react";
+import ladies from "../assets/ladies.png"
 
 import { useState, FormEvent } from "react";
 import { useAuthStore } from "../store/useAuthStore";
@@ -27,7 +28,7 @@ const SignInPage = () => {
 
   return (
     <div className="h-screen grid lg:grid-cols-2">
-      <img className="h-screen object-cover" src="https://img.freepik.com/free-photo/business-owner-holding-we-are-open-sign_53876-127038.jpg" />
+      <img className="h-screen object-cover" src={ladies} />
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
           {/* Logo */}
@@ -105,7 +106,7 @@ const SignInPage = () => {
           <div className="text-center">
             <p className="text-base-content/60">
               Don&apos;t have an account?{" "}
-              <Link to="/sign-up" className="link link-primary">
+              <Link to="/api/sign-up" className="link link-primary">
                 Create account
               </Link>
             </p>
