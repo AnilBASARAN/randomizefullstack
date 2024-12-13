@@ -1,4 +1,4 @@
-import {AppointmentReceipt} from './appointment-receipt';
+import {AppointmentReceipt} from './randomuser-receipt';
 
 import { Modal } from 'antd';
 
@@ -23,17 +23,17 @@ interface User {
 }
 
 
-interface ViewAppointmentModalProps{
+interface ViewRandomUserModalProps{
     user: User;
     showViewAppointmentModal: boolean;
-    setShowViewAppointmentModal: ( value:boolean)=> void;
+    setShowViewRandomUserModal: ( value:boolean)=> void;
 }
 
-export const ViewAppointmentModal=({
+export const ViewRandomUserModal=({
     user,
     showViewAppointmentModal,
-    setShowViewAppointmentModal,
-}:ViewAppointmentModalProps)=> {
+    setShowViewRandomUserModal: setShowViewAppointmentModal,
+}:ViewRandomUserModalProps)=> {
 
     if(!showViewAppointmentModal) return null;
 
@@ -43,7 +43,7 @@ export const ViewAppointmentModal=({
    onCancel={() => setShowViewAppointmentModal(false)}
    onClose={() => setShowViewAppointmentModal(false)}
    centered
-   title="Appointment Details"
+   title="Random User Details"
    width={600}
    footer={null}>
     <div className='mt-10' >

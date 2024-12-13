@@ -32,7 +32,6 @@ export const AppointmentReceipt = ({ user }: IAppointmentReceiptProps) => {
       );
   };
 
-  console.log("user:", user);
 
   return (
       <div className="w-full">

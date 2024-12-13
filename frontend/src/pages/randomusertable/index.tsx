@@ -4,7 +4,7 @@ import { Eye, Pencil, Trash } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import PageLoading from '../../components/pageLoading/PageLoading';
-import {ViewAppointmentModal} from './_components/view-appointment-modal.tsx';
+import {ViewRandomUserModal} from './_components/view-randomuser-modal.tsx';
 interface User {
     name: {
         first: string;
@@ -126,9 +126,9 @@ export const RandomUsersTable = () => {
                 loading={isLoading}
             />
             {selectedAppointment && (
-                <ViewAppointmentModal
+                <ViewRandomUserModal
                     showViewAppointmentModal={showViewAppointmentModal}
-                    setShowViewAppointmentModal={setShowViewAppointmentModal}
+                    setShowViewRandomUserModal={setShowViewAppointmentModal}
                     user={selectedAppointment}
                 />
 

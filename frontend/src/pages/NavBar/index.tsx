@@ -28,6 +28,21 @@ const NavBar = () => {
               </div>
             </Link>
           </div>
+          <div className="px-4">
+            <Link to="/userlist">
+              <div className="font-fair text-3xl md:text-2xl flex flex-col items-center">
+                Regular
+              </div>
+            </Link>
+          </div>
+
+          <div className="px-4">
+            <Link to="/randomusertable">
+              <div className="font-fair text-3xl md:text-2xl flex flex-col items-center">
+                Table
+              </div>
+            </Link>
+          </div>
 
           <div className="flex-1 items-center justify-end hidden md:flex">
             <div className="relative min-w-32">

@@ -1,11 +1,11 @@
 "use client"
-import { specializations, workDays,workHours } from '@/constants'
+
 import { uploadFileToFirebaseAndReturnURL } from '@/helpers/firebase-upload';
-import { IDoctor } from '@/interfaces';
-import { addDoctor, updateDoctor } from '@/server-actions/doctors';
+
+
 import { Button, Form,Input, message, Select, Upload } from 'antd'
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+
+import  { useState } from 'react'
 
 interface DoctorFormProps{
   type?: "add" | "edit";
