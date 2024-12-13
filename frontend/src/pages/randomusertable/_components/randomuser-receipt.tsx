@@ -18,11 +18,11 @@ interface User {
   };
 }
 
-interface IAppointmentReceiptProps {
+interface IRandomUserReceiptProps {
   user: User;
 }
 
-export const AppointmentReceipt = ({ user }: IAppointmentReceiptProps) => {
+export const RandomUserReceipt = ({ user }: IRandomUserReceiptProps) => {
   const renderProperty = (label: string, value: any) => {
       return (
           <div className="flex justify-between text-sm">

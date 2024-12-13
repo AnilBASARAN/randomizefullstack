@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import PageLoading from '../../components/pageLoading/PageLoading';
 import {ViewRandomUserModal} from './_components/view-randomuser-modal.tsx';
+import { Link } from 'react-router-dom';
+import FilterDoctors from './_components/filter-randomusers.tsx';
 interface User {
     name: {
         first: string;
@@ -117,8 +119,19 @@ export const RandomUsersTable = () => {
     ];
 
     return (
-        <div>
-            <Table
+        <div className="p-5 flex flex-col gap-5">
+      <div className="flex justify-between items-center">
+        <div className='flex justify-end items-end w-full'>
+
+        <Button type="primary">
+          <Link href="/admin/doctors/new">Add Random User</Link>
+        </Button>
+        </div>
+      </div>
+
+      <FilterDoctors />
+
+      <Table
                 dataSource={users}
                 columns={columns}
                 rowKey="_id"
@@ -134,6 +147,7 @@ export const RandomUsersTable = () => {
 
                
             )}
-        </div>
+    </div>
+       
     );
 };

@@ -1,4 +1,4 @@
-import {AppointmentReceipt} from './randomuser-receipt';
+import {RandomUserReceipt} from './randomuser-receipt';
 
 import { Modal } from 'antd';
 
@@ -48,7 +48,7 @@ export const ViewRandomUserModal=({
    footer={null}>
     <div className='mt-10' >
 
-    <AppointmentReceipt user={user} />
+    <RandomUserReceipt user={user} />
     </div>
     </Modal>
   )
