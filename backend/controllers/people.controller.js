@@ -7,6 +7,7 @@ export const getAllPeople = async (req, res) => {
         const { name, email, phone, city } = req.query; // Include 'city' in query parameters
         const filter = {};
 
+        // Filter by name (first or last name)
         if (name) {
             filter.$or = [
                 { "name.first": { $regex: name, $options: 'i' } },
@@ -14,14 +15,17 @@ export const getAllPeople = async (req, res) => {
             ];
         }
 
+        // Filter by email
         if (email) {
             filter.email = { $regex: email, $options: 'i' }; // Case-insensitive match
         }
 
+        // Filter by phone number
         if (phone) {
             filter.phone = { $regex: phone, $options: 'i' }; // Case-insensitive match
         }
 
+        // Filter by city (nested inside location object)
         if (city) {
             filter["location.city"] = { $regex: city, $options: 'i' }; // Case-insensitive match for city
         }
