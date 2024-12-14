@@ -14,6 +14,8 @@ import { useThemeStore } from './store/useThemeStore'
 import { useAuthStore } from './store/useAuthStore'
 import UserListPage from './pages/userlist'
 import Home from './pages/home'
+import { RandomUsersTable } from './pages/randomusertable'
+import { RandomUserFormPage } from './pages/addrandomuser'
 
 
 const App = () => {
@@ -32,6 +34,8 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/newrandomuser" element={<RandomUserFormPage />} />
+        <Route path="/randomusertable" element={<RandomUsersTable />} />
         <Route path="/userlist" element={ !authUser ? <UserListPage /> : <Navigate to="/" />} />
         <Route path="/:id" element={<UserDetail />} />
         <Route path="/settings" element={<SettingsPage /> } />

@@ -24,14 +24,12 @@ const peopleSchema = new mongoose.Schema({
       latitude: { type: String, required: true },
       longitude: { type: String, required: true },
     },
-    
   },
   email: {
     type: String,
     required: true,
     unique: true,
   },
-  
   dob: {
     date: { type: Date, required: true },
     age: { type: Number, required: true },
@@ -52,8 +50,7 @@ const peopleSchema = new mongoose.Schema({
     thumbnail: { type: String, required: true },
   },
 }, 
-  { timestamps: true }
-);
+{ timestamps: true });
 
 const People = mongoose.model('People', peopleSchema);
 export default People;
