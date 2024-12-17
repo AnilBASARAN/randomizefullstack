@@ -119,6 +119,7 @@ export const RandomUsersTable = () => {
                 <div className="flex gap-5">
                     <Button
                         onClick={() => {
+                            //randomize
                             setSelectedAppointment(row);
                             setShowViewAppointmentModal(true);
                         }}
